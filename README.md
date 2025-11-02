@@ -66,13 +66,13 @@ git push -u origin feature/your-branch
 
 Two common ways to deploy:
 
-1) Using the Vercel GitHub integration (recommended)
+1. Using the Vercel GitHub integration (recommended)
 
 - Push your repository to GitHub.
 - Go to https://vercel.com, sign in, and import your GitHub repository.
 - Vercel will detect Create React App and use `npm run build`. Ensure the build command is `npm run build` and the output directory is `build` (these are the defaults).
 
-2) Using the Vercel CLI
+2. Using the Vercel CLI
 
 Install and deploy via CLI:
 
@@ -97,17 +97,20 @@ This repo includes a `vercel.json` to explicitly tell Vercel to use the static-b
 ```json
 {
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }
 ```
 
 ## License
 
 This is a small practice repo — use it however you like.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
